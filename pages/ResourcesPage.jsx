@@ -79,7 +79,7 @@ function ArticleCard({ article, delay = 0 }) {
     <AnimateIn delay={delay}>
       <a
         href="#"
-        className="group block bg-white rounded-lg overflow-hidden shadow-card card-hover border border-gray-100"
+        className="group block bg-white rounded-2xl overflow-hidden shadow-card card-hover border border-gray-100"
       >
         {/* Image */}
         <div className="overflow-hidden aspect-video bg-gray-100">
