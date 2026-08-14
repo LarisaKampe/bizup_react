@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans text-navy antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Dropdown menu */
+  .nav-dropdown {
+    @apply absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-elevated border border-gray-100
+           opacity-0 invisible translate-y-1 transition-all duration-200 z-50;
+  }
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    @apply opacity-100 visible translate-y-0;
+  }
+
+  /* Animated underline for nav links */
+  .nav-link {
+    @apply relative text-sm font-medium text-navy hover:text-cyan transition-colors duration-200;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-0.5 w-0 h-0.5 bg-cyan transition-all duration-300;
+  }
+  .nav-link:hover::after { @apply w-full; }
+
+  /* Pill badge */
+  .badge-pill {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase
+           border border-white/30 text-white/90 rounded-full px-3 py-1.5;
+  }
+
+  /* Feature tag */
+  .feature-tag {
+    @apply inline-flex items-center gap-1.5 text-xs font-medium text-white/80
+           bg-white/10 border border-white/15 rounded-full px-3 py-1.5
+           hover:bg-white/15 transition-colors duration-200;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply inline-block text-xs font-bold tracking-[0.18em] uppercase text-cyan mb-3;
+  }
+
+  /* Divider line for step items */
+  .step-circle {
+    @apply flex-shrink-0 w-9 h-9 rounded-full bg-cyan text-white text-sm font-bold
+           flex items-center justify-center;
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated;
+  }
+
+  /* Navy gradient background for dark sections */
+  .bg-navy-blue {
+    background: linear-gradient(90deg, #0E5D8E 0%, #041A28 100%);
+  }
+}
+
+/* Scroll fade-in utility — applied via JS with IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
