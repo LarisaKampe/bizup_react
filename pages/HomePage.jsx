@@ -238,7 +238,7 @@ function PaybackSimple() {
             </ul>
           </AnimateIn>
           <AnimateIn delay={220}>
-            <Button to="/resources" variant="outline-cyan">
+            <Button to="/resources" variant="outline">
               Frequently Asked Questions
             </Button>
           </AnimateIn>
