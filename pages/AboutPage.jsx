@@ -45,23 +45,23 @@ function OurStory() {
         <AnimateIn delay={80}>
           <div className="space-y-4 text-navy/65 text-base leading-relaxed">
             <p>
-              BizUp started with a simple observation: small businesses are
-              the backbone of the economy, yet getting the finance they need
-              to grow is often slow, confusing, and full of hidden costs.
-              We set out to change that.
+              BizUp started with a simple observation: small businesses are the
+              backbone of the economy, yet getting the finance they need to grow
+              is often slow, confusing, and full of hidden costs. We set out to
+              change that.
             </p>
             <p>
-              We built a platform that connects businesses with funding in a
-              way that's fast, transparent, and tied to how they actually
-              sell — not rigid monthly payments that don't flex with a
-              slow week. Repayments scale with daily sales, pricing is
-              agreed upfront, and there are no long forms to fill in.
+              We built a platform that connects businesses with funding in a way
+              that's fast, transparent, and tied to how they actually sell — not
+              rigid monthly payments that don't flex with a slow week.
+              Repayments scale with daily sales, pricing is agreed upfront, and
+              there are no long forms to fill in.
             </p>
             <p>
               Today, we've helped thousands of businesses access the capital
-              they need to buy inventory, hire great people, and grow on
-              their own terms. Our story is still being written — and we're
-              just getting started.
+              they need to buy inventory, hire great people, and grow on their
+              own terms. Our story is still being written — and we're just
+              getting started.
             </p>
           </div>
         </AnimateIn>
@@ -103,9 +103,7 @@ function Principles() {
                 <h3 className="font-bold text-navy text-base mb-2">
                   {p.title}
                 </h3>
-                <p className="text-navy/60 text-sm leading-relaxed">
-                  {p.desc}
-                </p>
+                <p className="text-navy/60 text-sm leading-relaxed">{p.desc}</p>
               </div>
             </AnimateIn>
           ))}

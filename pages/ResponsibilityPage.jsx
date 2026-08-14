@@ -87,8 +87,8 @@ function Pillars() {
             Growth that gives back
           </h2>
           <p className="text-white/55 max-w-xl mx-auto">
-            Being a responsible finance company means more than fair pricing.
-            It means thinking about the impact we have on our people, our
+            Being a responsible finance company means more than fair pricing. It
+            means thinking about the impact we have on our people, our
             communities, and the planet.
           </p>
         </AnimateIn>
@@ -102,14 +102,12 @@ function Pillars() {
                               transition-all duration-300"
               >
                 <div
-                  className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center mb-4
+                  className="w-10 h-10 rounded-lg bg-cyan/20 flex items-center justify-center mb-4
                                 group-hover:bg-cyan/30 transition-colors duration-300"
                 >
                   <PillarIcon name={p.icon} className="w-5 h-5 text-cyan" />
                 </div>
-                <h3 className="font-bold text-white text-sm mb-2">
-                  {p.title}
-                </h3>
+                <h3 className="font-bold text-white text-sm mb-2">{p.title}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">
                   {p.desc}
                 </p>

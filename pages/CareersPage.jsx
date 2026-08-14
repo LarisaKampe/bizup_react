@@ -278,7 +278,7 @@ function CoreValues() {
                               transition-all duration-300"
               >
                 <div
-                  className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center mb-4
+                  className="w-10 h-10 rounded-lg bg-cyan/20 flex items-center justify-center mb-4
                                 group-hover:bg-cyan/30 transition-colors duration-300"
                 >
                   <ValueIcon name={val.icon} className="w-5 h-5 text-cyan" />
@@ -324,7 +324,7 @@ function Benefits() {
                               transition-all duration-300"
               >
                 <div
-                  className="w-10 h-10 rounded-full bg-cyan/10 flex items-center justify-center flex-shrink-0
+                  className="w-10 h-10 rounded-lg bg-cyan/10 flex items-center justify-center flex-shrink-0
                                 group-hover:bg-cyan/20 transition-colors duration-300"
                 >
                   <ValueIcon name={b.icon} className="w-5 h-5 text-cyan" />
