@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
+import Seo, { breadcrumbSchema, SITE_URL } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -63,6 +64,25 @@ const ARTICLES = [
   },
 ];
 
+/* ─── SEO ─────────────────────────────────────────────── */
+const PAGE_TITLE = "Business Resources & Guides";
+const PAGE_DESCRIPTION =
+  "Practical guides on cash flow, growth, and running a small business — insights from the BizUp team.";
+const PAGE_SCHEMA = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: PAGE_TITLE,
+    description:
+      "Practical guides on cash flow, growth, and running a small business.",
+    url: `${SITE_URL}/resources`,
+  },
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Resources", path: "/resources" },
+  ]),
+];
+
 const CATEGORIES = [
   "Most Recent",
   "Popular",
@@ -79,7 +99,7 @@ function ArticleCard({ article, delay = 0 }) {
     <AnimateIn delay={delay}>
       <a
         href="#"
-        className="group block bg-white rounded-2xl overflow-hidden shadow-card card-hover border border-gray-100"
+        className="group block bg-white rounded-lg overflow-hidden shadow-card card-hover border border-gray-100"
       >
         {/* Image */}
         <div className="overflow-hidden aspect-video bg-gray-100">
@@ -104,7 +124,8 @@ function ArticleCard({ article, delay = 0 }) {
               stroke="currentColor"
               strokeWidth={2.5}
               viewBox="0 0 24 24"
-            >
+    aria-hidden="true"
+  >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -131,6 +152,12 @@ export default function ResourcesPage() {
 
   return (
     <>
+      <Seo
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
+        path="/resources"
+        schema={PAGE_SCHEMA}
+      />
       <HeroSection
         badge="Secure Finance"
         badgeIcon="shield"
@@ -164,6 +191,7 @@ export default function ResourcesPage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
+                  aria-pressed={activeCategory === cat}
                   className={`
                     px-4 py-2 rounded-lg text-sm font-semibold border transition-all duration-200
                     ${

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import AnimateIn from "../components/AnimateIn";
 import HeroSection from "../components/HeroSection";
 import Button from "../components/Button";
+import Seo, { SITE_URL } from "../components/Seo";
 
 /* ─── HERO IMAGE ─────────────────────────────────────── */
 const HERO_IMG = "/assets/homescreen_11.png";
@@ -16,6 +17,7 @@ const CheckIcon = () => (
     stroke="currentColor"
     strokeWidth={2.5}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <polyline
       points="20 6 9 12 4 10"
@@ -38,6 +40,7 @@ const CheckSimple = () => (
     stroke="currentColor"
     strokeWidth={2.5}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
@@ -321,6 +324,23 @@ function CTABanner() {
 export default function HomePage() {
   return (
     <>
+      <Seo
+        title="Business Finance You Will Love"
+        description="Access up to $300,000 in business funding with transparent pricing and repayments tied to your daily sales. No long forms, no hidden fees."
+        path="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FinancialProduct",
+          name: "BizUp Business Funding",
+          description:
+            "Revenue-based business funding from $3,000 to $300,000, repaid via an agreed percentage of daily card sales.",
+          provider: {
+            "@type": "Organization",
+            name: "BizUp",
+            url: SITE_URL,
+          },
+        }}
+      />
       <HeroSection
         badge="Secure Finance"
         badgeIcon="shield"

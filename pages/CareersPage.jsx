@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
 import Button from "../components/Button";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -84,7 +85,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
   };
   const icons = {
     shield: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,7 +96,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     heart: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -102,13 +107,17 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     clock: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <circle cx="12" cy="12" r="10" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
       </svg>
     ),
     lock: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <rect x="5" y="11" width="14" height="10" rx="2" />
         <path
           strokeLinecap="round"
@@ -118,7 +127,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     flag: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -127,12 +138,16 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     star: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
     plane: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -141,7 +156,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     book: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -150,7 +167,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     food: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -159,7 +178,9 @@ function ValueIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     family: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -188,6 +209,7 @@ function StickyTabs({ activeTab }) {
             <a
               key={tab}
               href={`#${tab}`}
+              aria-current={activeTab === tab ? "true" : undefined}
               className={`
                 text-sm font-semibold pb-0.5 whitespace-nowrap border-b-2 transition-colors duration-200
                 ${
@@ -346,6 +368,22 @@ function Benefits() {
   );
 }
 
+/* ─── SEO ─────────────────────────────────────────────── */
+const PAGE_TITLE = "Careers";
+const PAGE_DESCRIPTION =
+  "Join BizUp and help build fast, transparent finance for small businesses. Explore our culture, core values, and benefits.";
+const PAGE_SCHEMA = [
+  webPageSchema({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/careers",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Careers", path: "/careers" },
+  ]),
+];
+
 /* ─── Page ───────────────────────────────────────────── */
 export default function CareersPage() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -373,6 +411,12 @@ export default function CareersPage() {
 
   return (
     <>
+      <Seo
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
+        path="/careers"
+        schema={PAGE_SCHEMA}
+      />
       <HeroSection
         badge="Careers"
         badgeIcon="briefcase"

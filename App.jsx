@@ -25,8 +25,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/resources" element={<ResourcesPage />} />

@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
 import Button from "../components/Button";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -138,8 +139,24 @@ function CTABanner() {
 
 /* ─── Page ───────────────────────────────────────────── */
 export default function AboutPage() {
+  const title = "About Us";
+  const description =
+    "BizUp is on a mission to make business funding fast, fair, and transparent — so every business gets the chance to grow on its own terms.";
+
   return (
     <>
+      <Seo
+        title={title}
+        description={description}
+        path="/about"
+        schema={[
+          webPageSchema({ name: title, description, path: "/about" }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About Us", path: "/about" },
+          ]),
+        ]}
+      />
       <HeroSection
         badge="About Us"
         badgeIcon="shield"

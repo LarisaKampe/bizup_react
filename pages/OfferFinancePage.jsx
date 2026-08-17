@@ -1,5 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
+import Seo, { breadcrumbSchema, SITE_URL } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -63,6 +64,7 @@ const BulletCheck = () => (
     className="w-3.5 h-3.5 text-cyan flex-shrink-0 mt-0.5"
     fill="currentColor"
     viewBox="0 0 20 20"
+    aria-hidden="true"
   >
     <circle
       cx="10"
@@ -132,6 +134,25 @@ function PartnerCard({ p, delay = 0 }) {
 export default function OfferFinancePage() {
   return (
     <>
+      <Seo
+        title="Partner With Us"
+        description="Partner with BizUp to offer your customers fast, transparent business financing from $3,000 to $300,000 and grow your revenue."
+        path="/offer-finance"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Business finance partner program",
+            provider: { "@type": "Organization", name: "BizUp", url: SITE_URL },
+            description:
+              "Partnership program for payment providers, platforms, brokers, banks, and advisory firms to offer BizUp's business funding to their customers.",
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Offer Finance", path: "/offer-finance" },
+          ]),
+        ]}
+      />
       <HeroSection
         badge="Partner with BizUp"
         badgeIcon="partner"

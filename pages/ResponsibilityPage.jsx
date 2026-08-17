@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
 import Button from "../components/Button";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -38,7 +39,9 @@ function PillarIcon({ name, className = "w-5 h-5" }) {
   };
   const icons = {
     scale: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -47,7 +50,9 @@ function PillarIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     users: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -56,7 +61,9 @@ function PillarIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     leaf: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -65,7 +72,9 @@ function PillarIcon({ name, className = "w-5 h-5" }) {
       </svg>
     ),
     handshake: (
-      <svg {...props}>
+      <svg {...props}
+    aria-hidden="true"
+  >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -179,8 +188,31 @@ function CTABanner() {
 
 /* ─── Page ───────────────────────────────────────────── */
 export default function ResponsibilityPage() {
+  const title = "Corporate Responsibility";
+  const description =
+    "How BizUp gives back — responsible lending, community investment, environmental commitment, and diversity & inclusion.";
+
   return (
     <>
+      <Seo
+        title={title}
+        description={description}
+        path="/corporate-responsibility"
+        schema={[
+          webPageSchema({
+            name: title,
+            description,
+            path: "/corporate-responsibility",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            {
+              name: "Corporate Responsibility",
+              path: "/corporate-responsibility",
+            },
+          ]),
+        ]}
+      />
       <HeroSection
         badge="Corporate Responsibility"
         badgeIcon="shield"

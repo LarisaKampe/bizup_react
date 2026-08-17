@@ -9,6 +9,7 @@ const ShieldIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -24,6 +25,7 @@ const BriefIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -39,6 +41,7 @@ const LightIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -54,6 +57,7 @@ const TagIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -69,6 +73,7 @@ const NoHideIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"

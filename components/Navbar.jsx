@@ -10,6 +10,7 @@ const PhoneIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -25,6 +26,7 @@ const UserIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -40,6 +42,7 @@ const GlobeIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <circle cx="12" cy="12" r="10" />
     <path
@@ -55,6 +58,7 @@ const ChevronDn = () => (
     stroke="currentColor"
     strokeWidth={2.5}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
   </svg>
@@ -66,6 +70,7 @@ const MenuIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"
@@ -81,6 +86,7 @@ const CloseIcon = () => (
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
+    aria-hidden="true"
   >
     <path
       strokeLinecap="round"

@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import AnimateIn from "../components/AnimateIn";
 import Button from "../components/Button";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const HERO_IMG = "/assets/homescreen_11.png";
 
@@ -119,8 +120,24 @@ function MediaContact() {
 
 /* ─── Page ───────────────────────────────────────────── */
 export default function PressPage() {
+  const title = "Press & News";
+  const description =
+    "Announcements, media coverage, and press contacts for journalists covering BizUp and small business finance.";
+
   return (
     <>
+      <Seo
+        title={title}
+        description={description}
+        path="/press"
+        schema={[
+          webPageSchema({ name: title, description, path: "/press" }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Press", path: "/press" },
+          ]),
+        ]}
+      />
       <HeroSection
         badge="Press"
         badgeIcon="shield"

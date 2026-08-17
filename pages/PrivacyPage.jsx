@@ -1,4 +1,5 @@
 import AnimateIn from "../components/AnimateIn";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const LAST_UPDATED = "August 14, 2026";
 
@@ -58,8 +59,24 @@ function LegalHeader({ eyebrow, title, subtitle }) {
 }
 
 export default function PrivacyPage() {
+  const title = "Privacy Policy";
+  const description =
+    "Learn how BizUp collects, uses, and protects your personal and business information, and how to exercise your privacy rights.";
+
   return (
     <>
+      <Seo
+        title={title}
+        description={description}
+        path="/privacy"
+        schema={[
+          webPageSchema({ name: title, description, path: "/privacy" }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path: "/privacy" },
+          ]),
+        ]}
+      />
       <LegalHeader
         eyebrow="Legal"
         title="Privacy Policy"

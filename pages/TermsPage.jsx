@@ -1,4 +1,5 @@
 import AnimateIn from "../components/AnimateIn";
+import Seo, { breadcrumbSchema, webPageSchema } from "../components/Seo";
 
 const LAST_UPDATED = "August 14, 2026";
 
@@ -62,8 +63,24 @@ function LegalHeader({ eyebrow, title, subtitle }) {
 }
 
 export default function TermsPage() {
+  const title = "Terms and Conditions";
+  const description =
+    "Read BizUp's Terms and Conditions covering eligibility, funding offers, fees, repayment, and your responsibilities as a user.";
+
   return (
     <>
+      <Seo
+        title={title}
+        description={description}
+        path="/terms"
+        schema={[
+          webPageSchema({ name: title, description, path: "/terms" }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Terms and Conditions", path: "/terms" },
+          ]),
+        ]}
+      />
       <LegalHeader
         eyebrow="Legal"
         title="Terms and Conditions"
